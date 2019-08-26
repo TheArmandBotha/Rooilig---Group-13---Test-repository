@@ -1,13 +1,12 @@
 
-<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)">
-  <agm-marker 
-    [latitude]="lat" 
-    [longitude]="lng"
-    *ngIf="locationChosen">
-    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
-      <ng-template>
-        My first Snazzy Info Window!
-      </ng-template>
-    </agm-snazzy-info-window>
-  </agm-marker>
-</agm-map>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Google Map Style
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div #map id="map" style="height:100%;width:100%"></div>
+</ion-content>

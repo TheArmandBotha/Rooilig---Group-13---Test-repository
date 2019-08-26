@@ -1,23 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { GoogleMaps, GoogleMap, CameraPosition, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild('map', {static: false}) mapElement: ElementRef;
+  map: GoogleMap;
 
-  title = 'My first AGM project';
-  lat = -26.72104325806566;
-  lng = 27.09517283257685;
-  locationChosen = false;
+  constructor(public navCtrl: NavController,private googleMaps: GoogleMaps) { }
 
-  constructor() {}
+  ngAfterViewInit() {
+    this.initMap();
+  }
 
-  onChoseLocation(event){
-    this.lat = event.coords.lat;
-    this.lng = event.coords.lng;
-    this.locationChosen = true;
+  initMap(){
+    let element = this.mapElement.nativeElement;
+    let loc: LatLng = new LatLng(40.7128, -74.0059);
+
+    this.map = this.googleMaps.create(element, { styles: []});
+
+    this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
+        this.moveCamera(loc);
+    });
+  }
+
+  moveCamera(loc: LatLng){
+      let options: CameraPosition<any> = {
+        target: loc,
+        zoom: 15,
+        tilt: 10
+      };
+      this.map.moveCamera(options);
   }
 
 }
