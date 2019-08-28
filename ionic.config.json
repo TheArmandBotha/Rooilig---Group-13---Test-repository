@@ -1,5 +1,7 @@
 {
-  "name": "Tipsy",
-  "integrations": {},
+  "name": "Videos",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
