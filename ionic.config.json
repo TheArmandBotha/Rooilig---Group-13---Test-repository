@@ -1,7 +1,0 @@
-{
-  "name": "Videos",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
