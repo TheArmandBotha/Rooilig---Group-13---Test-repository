@@ -1,1 +1,7 @@
-{}
+{
+  "appId": "com.ph.camera",
+  "appName": "capacitorCamera",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
