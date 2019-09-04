@@ -7,16 +7,15 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
+// import { HomePag } from './app.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,
-            IonicModule.forRoot(),
-            AppRoutingModule
-  ],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
