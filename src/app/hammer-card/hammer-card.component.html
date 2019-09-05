@@ -1,0 +1,24 @@
+<ion-card class="example-card" 
+          [@cardAnimator]="animationState" 
+          (@cardAnimator.done)="resetAnimationState()"
+          (swipeleft)="startAnimation('slideOutLeft')"
+          (swiperight)="startAnimation('zoomOutRight')"
+          (swipeup)="startAnimation('rotateOutUpRight')"
+          (swipedown)="startAnimation('flipOutY')">
+ 
+    <ion-card-content>
+        <img src="https://angular.io/assets/images/logos/angular/angular.svg">
+        
+      <p>
+          Learn one way to build applications with Angular and reuse your code and abilities to build apps for any deployment target. For web, mobile web, native mobile and native desktop.
+      </p>
+    </ion-card-content>
+    <ion-card-content>
+      <button color="primary" (tap)="startAnimation('wobble')">WOBBLE</button>
+      <button color="primary" (tap)="startAnimation('swing')">SWING</button>
+      <div (swipe)="slidePage($event)"></div>
+
+      <h5>Custom Events</h5>
+      <button color="accent" (doubleTap)="startAnimation('jello')">JELLO (doubleTap)</button>
+    </ion-card-content>
+  </ion-card>

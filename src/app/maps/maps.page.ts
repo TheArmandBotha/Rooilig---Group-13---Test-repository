@@ -2,7 +2,6 @@ import { ElementRef, ViewChild, Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { GoogleMaps, GoogleMap, CameraPosition, LatLng, GoogleMapsEvent } from '@ionic-native/google-maps';
 import { mapStyle } from './mapStyle';
-import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 
 @Component({
   selector: 'app-maps',
@@ -55,6 +54,4 @@ export class MapsPage {
 
   // ======================== SLIDES ====================
 
-  slidePage(event: Event) {
-  }
 }
